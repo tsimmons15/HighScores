@@ -61,6 +61,6 @@ public class SortingTests {
         scoreList.add(score3);
 
         List<Score> sorted = sorter.sortByScore(scoreList);
-        Assertions.assertTrue(sorted.get(0).getPoints() < sorted.get(sorted.size()-1).getPoints());
+        Assertions.assertTrue(sorted.get(0).getPoints() >= sorted.get(sorted.size()-1).getPoints());
     }
 }
