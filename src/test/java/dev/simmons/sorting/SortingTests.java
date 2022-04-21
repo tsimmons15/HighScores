@@ -12,6 +12,7 @@ public class SortingTests {
     static Sorting sorter = null;
     @Test
     void filterByInitials() {
+        sorter = new Sorter();
         Score score = new Score();
         score.setInitials("JHN");
         score.setPoints(50);
