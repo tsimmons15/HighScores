@@ -22,9 +22,15 @@ public class HighScoreTracker {
 
         app.post("/scores", ctx -> {
             Score score = gson.fromJson(ctx.body(), Score.class);
-            scoreList.add(score);
-            ctx.status(201);
-            ctx.result("Score " + score + " was added.");
+            if (score.getPoints() > 0) {
+                scoreList.add(score);
+                ctx.status(201);
+                ctx.result("Score " + score + " was added.");
+            } else {
+                ctx.status(400);
+                ctx.result("Score cannot be negative");
+            }
+
         });
 
         app.exception(Exception.class, (err, ctx) -> {
