@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class ExampleTest {
     @Test
-    public void tautology() {
+    void tautology() {
         Assertions.assertTrue(1 == 1);
     }
 }
