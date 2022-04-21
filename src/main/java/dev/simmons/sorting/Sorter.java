@@ -13,7 +13,7 @@ public class Sorter implements Sorting{
 
     @Override
     public List<Score> sortByScore(List<Score> scores) {
-        scores.sort((s, o) -> Integer.compare(s.getPoints(), o.getPoints()))
+        scores.sort((s, o) -> Integer.compare(s.getPoints(), o.getPoints()));
         return scores;
     }
 }
