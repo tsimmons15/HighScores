@@ -7,13 +7,12 @@ import java.util.stream.Collectors;
 
 public class Sorter implements Sorting{
     @Override
-    public List<Score> sortByInitials(List<Score> scores, String initials) {
+    public List<Score> filterByInitials(List<Score> scores, String initials) {
         return scores.stream().filter(s -> s.getInitials().equals(initials)).collect(Collectors.toList());
     }
 
     @Override
     public List<Score> sortByScore(List<Score> scores) {
-        scores.sort((s, o) -> Integer.compare(s.getPoints(), o.getPoints()));
-        return scores;
+        return scores.stream().sorted((s, o) -> -1*Integer.compare(s.getPoints(), o.getPoints())).collect(Collectors.toList());
     }
 }
